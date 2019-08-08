@@ -1,12 +1,18 @@
 <h1>Here is the List of Our Latest Articles</h1>
 
+<p><h1>Welcome to Blogglify!!</h1></p>
+
 <p>
+    <%if !'/articles/article.id' %>
     <h3>Trending Now: </h3>
     <ul>
     <% @article.each do |art| %>
-    <a href="articles/<%= art.id %>">
-    <li><%= art.title %></li>
-    </a>
-    <% end %>
+    <li><a href="/<%= art.id %>">
+    <%= art.title %></a>
+    </li>
     </ul>
+    <% end %>
+    <%else%>
+        <h2>Would you like to post or read an article today?</h2>
+    <% end %>
 </p>
