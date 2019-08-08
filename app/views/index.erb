@@ -1,8 +1,12 @@
-<h1>Here is the List of Your Latest Articles</h1>
+<h1>Here is the List of Our Latest Articles</h1>
 
 <p>
-    <% @article.each |art| do %>
-    <h4><%= art.title %></h4>
-    
+    <h3>Trending Now: </h3>
+    <ul>
+    <% @article.each do |art| %>
+    <a href="articles/<%= art.id %>">
+    <li><%= art.title %></li>
+    </a>
     <% end %>
+    </ul>
 </p>
